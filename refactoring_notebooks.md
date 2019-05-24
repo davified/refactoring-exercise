@@ -18,4 +18,5 @@ Code smells
 - no tests for data transformations (e.g. cell 17 onwards)
 - cell 18, 19 (mutation to `dataset` outside of a function)
 - duplication in model training code. Can extract to a function.
+- duplication in EDA code. Can extract to a function.
 - duplication in how test_df and train_df are joined. Why not just join it once, and use the combined df for all data transformations?
