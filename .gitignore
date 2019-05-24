@@ -1,0 +1,16 @@
+.venv*/
+
+**/__pycache__
+models/*.joblib
+!models/keep
+**/.ipynb_checkpoints
+
+# ignoring all json files in project root folder to prevent accidental commits of secrets 
+/*.json
+
+# IDE config
+.vscode/
+.idea/
+
+# linters
+.mypy_cache
