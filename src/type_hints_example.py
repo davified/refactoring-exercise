@@ -19,3 +19,7 @@ x = tokenize([1])
 
 # if type hints isn't working right for you in VS code, read this: https://stackoverflow.com/questions/52155987/python-3-x-type-hints-in-visual-studio-code
 
+# popular typecheckers
+# - https://pyre-check.org/ (use this)
+# - https://github.com/google/pytype
+# - https://github.com/microsoft/pyright (works only with VS Code)
