@@ -44,6 +44,37 @@ current_date: str = datetime.date.today().strftime("%y-%m-%d")
 ```
 **[⬆ back to top](#table-of-contents)**
 
+### Variable names should reveal intent
+We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles. 
+
+One common culprit in data science code is dataframes. Every dataframe is named as `df`. In software programming, it's an unusual (and bad) practice to embed information about variable types in the variable name (e.g. we would probably never write `string = 'Hello friends'`. Instead, we would write `greeting = 'Hello friends'`). 
+
+**Bad:**
+```python
+df = pd.read_csv('loans.csv')
+
+df = group_loans_by_user(df)
+df = filter_loans_by_year(df, year=2024)
+
+# let's try to calculate total loan amount 
+total_loan_amount = df... # wait, what is in df again?
+```
+
+**Good**:
+One rule of thumb on how to name dataframes is to think about what is in each row. For instance, if each row in my dataframe is a loan, then the dataframe is a **collection of loan entries**. Hence, we could call the dataframe `loans`.
+
+```python
+loans = pd.read_csv('loans.csv')
+
+loans_by_user = group_loans_by_user(loans)
+loans_by_user_for_a_single_year = filter_loans_by_year(loans_by_user, year=2024)
+
+# let's try to calculate total loan amount 
+total_loan_amount = loans_by_user_for_a_single_year.sum()
+
+```
+**[⬆ back to top](#table-of-contents)**
+
 ### Use the same vocabulary for the same type of variable
 
 **Bad:**
@@ -80,11 +111,7 @@ class User:
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use searchable names
-We will read more code than we will ever write. It's important that the code we do write is 
-readable and searchable. By *not* naming variables that end up being meaningful for 
-understanding our program, we hurt our readers.
-Make your names searchable.
+### No magic strings / magic numbers
 
 **Bad:**
 ```python
@@ -94,10 +121,34 @@ time.sleep(86400);
 
 **Good**:
 ```python
-# Declare them in the global namespace for the module.
-SECONDS_IN_A_DAY = 60 * 60 * 24
+# Extract magic number as a variable
+SECONDS_IN_A_DAY = 86400
 
 time.sleep(SECONDS_IN_A_DAY)
+```
+**[⬆ back to top](#table-of-contents)**
+
+### Use variables to keep code "DRY"
+DRY stands for "Don't Repeat Yourself". If you find yourself changing the same thing in multiple places, then that thing which you're changing is a candidate for refactoring.
+
+**Bad:**
+Notice how `original_target_column` is duplicated in multiple places. If the column name in the data should change (e.g. to `literally_anything`), then we would need to waste effort in finding and replacing `original_target_column` in multiple places.
+
+```python
+loans = loans.fillna('original_target_column')
+loans = loans.rename({'original_target_column': 'new_column_name'}, axis=1)
+loans.groupby(['original_target_column']).mean().sort_values(by='original_target_column')
+```
+
+**Good**:
+Now, we only need to update the column name in one place.
+
+```python
+target_column = 'original_target_column'
+
+loans = loans.fillna(target_column)
+loans = loans.rename({target_column: 'new_column_name'}, axis=1)
+loans.groupby([target_column]).mean().sort_values(by=target_column)
 ```
 **[⬆ back to top](#table-of-contents)**
 
