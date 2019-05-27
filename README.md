@@ -1,5 +1,21 @@
 # clean-code-data-science
 
+<!-- template -->
+### _
+We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles.
+
+**Bad:**
+```python
+# bad example
+```
+
+**Good**:
+```python
+# good example
+```
+**[⬆ back to top](#table-of-contents)**
+<!-- end template -->
+
 A set of clean code practices for data science workflows. Forked from [clean-code-python](https://github.com/zedr/clean-code-python).
 
 ## Table of Contents
