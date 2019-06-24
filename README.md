@@ -222,6 +222,12 @@ class Car:
     car_make: str
     car_model: str
     car_color: str
+
+# usage:
+car = Car()
+car.car_make
+car.car_model
+car.car_color
 ```
 
 **Good**:
@@ -231,9 +237,31 @@ class Car:
     make: str
     model: str
     color: str
+
+# usage
+car = Car()
+car.make
+car.model
+car.color
 ```
 
-TODO: add how type hints can help here! 
+### Use type hints to make code readable
+
+Using type hints can make your code more readable and reasonable. Your development experience will also be improved because your IDE will be able to give you better auto-complete suggestions about function/method names and parameters.
+
+**Bad:**
+
+Without type hints, we are forced to embed type information in variable names (e.g. `pd_series`). This can make variable names unnecessarily long. Also, our IDE is not able to give us auto-complete hints, and as a result, we have to hop to the source file to find out what parameters this function accepts.
+
+<img src="./images/type_hints_bad_example.png" width=500 alt="type hints bad example">
+
+**Good**:
+
+With type hints, we can name our variables sensibly, and the IDE now offers better autocompletion and make us more productive and less error-prone.
+
+<img src="./images/type_hints_good_example.png" width=500 alt="type hints good example">
+
+It's important to note that type hints are meant to be entirely ignored by the Python runtime, and are checked only by 3rd party tools like `mypy` and Pycharm's integrated checker. You can read more about type hints and how to use type checkers [here](https://www.bernat.tech/the-state-of-type-hints-in-python/). 
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -268,7 +296,7 @@ Limiting the amount of function parameters is incredibly important because it ma
 testing your function easier. Having more than three leads to a combinatorial explosion 
 where you have to test tons of different cases with each separate argument.
 
-Zero arguments is the ideal case. One or two arguments is ok, and three should be avoided. 
+One or two arguments is ok, and three should be avoided. 
 Anything more than that should be consolidated. Usually, if you have more than two 
 arguments then your function is trying to do too much. In cases where it's not, most 
 of the time a higher-level object will suffice as an argument.
