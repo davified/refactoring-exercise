@@ -2,45 +2,18 @@
 
 TODO:
 - add reference to assignment / code-along README
-- add type hints example
 
-<!-- template -->
-### Template
-We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles.
-
-**Bad:**
-```python
-# bad example
-```
-
-**Good**:
-```python
-# good example
-```
-**[⬆ back to top](#table-of-contents)**
-<!-- end template -->
-
-A set of clean code practices for data science workflows. Forked from [clean-code-python](https://github.com/zedr/clean-code-python).
+A set of clean code practices for data science workflows. Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and forked from [clean-code-python](https://github.com/zedr/clean-code-python).
 
 ## Table of Contents
   1. [Introduction](#introduction)
   2. [Variables](#variables)
   3. [Functions](#functions)
-  4. [Objects and Data Structures](#objects-and-data-structures)
-  5. [Classes](#classes)
-     1. [S: Single Responsibility Principle (SRP)](#single-responsibility-principle-srp)
-     2. [O: Open/Closed Principle (OCP)](#openclosed-principle-ocp)
-     3. [L: Liskov Substitution Principle (LSP)](#liskov-substitution-principle-lsp)
-     4. [I: Interface Segregation Principle (ISP)](#interface-segregation-principle-isp)
-     5. [D: Dependency Inversion Principle (DIP)](#dependency-inversion-principle-dip)
-  6. [Don’t repeat yourself (DRY)](#dont-repeat-yourself-dry)
 
 ## Introduction
 
 Clean code practices (from [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) and [Refactoring](https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599)) adapted for machine learning / data science workflows in Python. This is not a style guide. It's a guide to producing
 readable, reusable, and refactorable software.
-
-Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and [clean-code-python](https://github.com/zedr/clean-code-python)
 
 Targets Python3.7+
 
@@ -278,8 +251,7 @@ def create_micro_brewery(name):
     # etc.
 ```
 
-... when you can specify a default argument instead? This also makes ist clear that
-you are expecting a string as the argument.
+... when you can specify a default argument instead? This also makes ist clear that you are expecting a string as the argument.
 
 **Good**:
 
@@ -292,14 +264,9 @@ def create_micro_brewery(name: str = "Hipster Brew Co."):
 **[⬆ back to top](#table-of-contents)**
 ## **Functions**
 ### Function arguments (2 or fewer ideally)
-Limiting the amount of function parameters is incredibly important because it makes 
-testing your function easier. Having more than three leads to a combinatorial explosion 
-where you have to test tons of different cases with each separate argument.
+Limiting the amount of function parameters is incredibly important because it makes  testing your function easier. Having more than three leads to a combinatorial explosion  where you have to test tons of different cases with each separate argument.
 
-One or two arguments is ok, and three should be avoided. 
-Anything more than that should be consolidated. Usually, if you have more than two 
-arguments then your function is trying to do too much. In cases where it's not, most 
-of the time a higher-level object will suffice as an argument.
+One or two arguments is ok, and three should be avoided. Anything more than that should be consolidated. Usually, if you have more than two arguments then your function is trying to do too much. In cases where it's not, most of the time a higher-level object will suffice as an argument.
 
 **Bad:**
 ```python
@@ -429,11 +396,7 @@ create_menu(
 **[⬆ back to top](#table-of-contents)**
 
 ### Functions should do one thing
-This is by far the most important rule in software engineering. When functions do more 
-than one thing, they are harder to compose, test, and reason about. When you can isolate 
-a function to just one action, they can be refactored easily and your code will read much 
-cleaner. If you take nothing else away from this guide other than this, you'll be ahead 
-of many developers.
+This is by far the most important rule in software engineering. When functions do more than one thing, they are harder to compose, test, and reason about. When you can isolate a function to just one action, they can be refactored easily and your code will read much cleaner. If you take nothing else away from this guide other than this, you'll be ahead of many developers.
 
 **Bad:**
 ```python
@@ -511,8 +474,7 @@ message.send()
 
 ### Functions should only be one level of abstraction
 
-When you have more than one level of abstraction, your function is usually doing too 
-much. Splitting up functions leads to reusability and easier testing.
+When you have more than one level of abstraction, your function is usually doing too much. Splitting up functions leads to reusability and easier testing.
 
 **Bad:**
 
@@ -573,9 +535,7 @@ def parse(tokens: list) -> list:
 
 ### Don't use flags as function parameters
 
-Flags tell your user that this function does more than one thing. Functions 
-should do one thing. Split your functions if they are following different code 
-paths based on a boolean.
+Flags tell your user that this function does more than one thing. Functions should do one thing. Split your functions if they are following different code paths based on a boolean.
 
 **Bad:**
 
@@ -605,21 +565,11 @@ def create_temp_file(name: str) -> None:
 
 ### Avoid side effects
 
-A function produces a side effect if it does anything other than take a value in 
-and return another value or values. For example, a side effect could be writing 
-to a file, modifying some global variable, or accidentally wiring all your money
-to a stranger.
+A function produces a side effect if it does anything other than take a value in and return another value or values. For example, a side effect could be writing to a file, modifying some global variable, or accidentally wiring all your money to a stranger.
 
-Now, you do need to have side effects in a program on occasion - for example, like
-in the previous example, you might need to write to a file. In these cases, you
-should centralize and indicate where you are incorporating side effects. Don't have
-several functions and classes that write to a particular file - rather, have one
-(and only one) service that does it.
+Now, you do need to have side effects in a program on occasion - for example, like in the previous example, you might need to write to a file. In these cases, you should centralize and indicate where you are incorporating side effects. Don't have several functions and classes that write to a particular file - rather, have one (and only one) service that does it.
 
-The main point is to avoid common pitfalls like sharing state between objects
-without any structure, using mutable data types that can be written to by anything,
-or using an instance of a class, and not centralizing where your side effects occur.
-If you can do this, you will be happier than the vast majority of other programmers.
+The main point is to avoid common pitfalls like sharing state between objects without any structure, using mutable data types that can be written to by anything, or using an instance of a class, and not centralizing where your side effects occur. If you can do this, you will be happier than the vast majority of other programmers.
 
 **Bad:**
 
