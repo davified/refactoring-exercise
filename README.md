@@ -1,7 +1,5 @@
 # clean-code-ml
 
-A set of clean code practices for machine learning and data science workflows. Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and forked from [clean-code-python](https://github.com/zedr/clean-code-python).
-
 ## Table of Contents
   1. [Introduction](#introduction)
   2. [Variables](#variables)
@@ -15,6 +13,8 @@ readable, reusable, and refactorable software.
 If you'd like to try out these practices, we've created a [refactoring exercise](./refactoring-exercise.md) which you can follow along. Starting with a jupyter notebook with many code smells, you can apply these clean code principles and refactor it to be readable and maintainable. The sample final solution can be found in [`src/train.py`](src/train.py).
 
 Targets Python3.7+
+
+Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and forked from [clean-code-python](https://github.com/zedr/clean-code-python).
 
 ## **Variables**
 
