@@ -2,7 +2,7 @@ import unittest
 import pandas as pd
 import numpy as np
 from pandas.testing import assert_frame_equal, assert_series_equal
-from src.preprocessing import add_derived_title, encode_title, categorize_column, add_is_alone_column, impute_nans
+from src.preprocessing import add_derived_title, categorize_column, add_is_alone_column, impute_nans
 
 
 class TestProcessing(unittest.TestCase):
@@ -40,16 +40,6 @@ class TestProcessing(unittest.TestCase):
 
         assert_frame_equal(expected, add_derived_title(df))
 
-    def test_encode_title(self):
-        df = pd.DataFrame({'Title': ['Mr', 'Miss', 'Miss', 'Mrs',
-                                     'Miss', 'Rare', 'Rare', np.nan]
-                           })
-
-        expected = pd.DataFrame({
-            'Title': [1, 2, 2, 3, 2, 5, 5, 0]
-        })
-        assert_frame_equal(expected, encode_title(df), check_dtype=False)
-        
     def test_categorize_column_into_2_categories(self):
         series = pd.Series([5, 20, 10, 25]) # bins:  [ 4.98 15.   25.  ]
 

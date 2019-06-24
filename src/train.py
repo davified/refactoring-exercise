@@ -2,7 +2,7 @@ import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier
 
-from preprocessing import add_derived_title, encode_title, categorize_column, impute_nans, add_is_alone_column
+from preprocessing import add_derived_title, categorize_column, impute_nans, add_is_alone_column, add_categorical_columns
 from model_training import train_model
 
 train_df = pd.read_csv("./input/train.csv")
@@ -11,15 +11,10 @@ df = pd.concat([train_df,test_df], sort=True)
 
 df = impute_nans(df, categorical_columns=['Embarked'], continuous_columns=['Fare', 'Age'])
 df = add_derived_title(df)
-df = encode_title(df)
 df = add_is_alone_column(df)
+df = add_categorical_columns(df)
 
-df['AgeGroup'] = categorize_column(df['Age'], num_bins=5)
-df['FareBand'] = categorize_column(df['Fare'], num_bins=4)
-df['Sex'] = df['Sex'].map( {'female': 1, 'male': 0} ).astype(int)
-df['Embarked'] = df['Embarked'].map( {'S': 0, 'C': 1, 'Q': 2} ).astype(int)
 df['AgeGroup*Class'] = df['AgeGroup'] * df['Pclass']
-
 df = df.drop(['Parch', 'SibSp', 'Name', 'PassengerId', 'Ticket', 'Cabin'], axis=1)
 
 train_df = df[-df['Survived'].isna()]
