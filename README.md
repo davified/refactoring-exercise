@@ -1,8 +1,5 @@
 # clean-code-ml
 
-TODO:
-- add reference to assignment / code-along README
-
 A set of clean code practices for data science workflows. Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and forked from [clean-code-python](https://github.com/zedr/clean-code-python).
 
 ## Table of Contents
@@ -14,6 +11,8 @@ A set of clean code practices for data science workflows. Inspired by [clean-cod
 
 Clean code practices (from [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) and [Refactoring](https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599)) adapted for machine learning / data science workflows in Python. This is not a style guide. It's a guide to producing
 readable, reusable, and refactorable software.
+
+If you'd like to try out these practices, we've created a [refactoring exercise](./refactoring-exercise.md) which you can follow along. Starting with a jupyter notebook with many code smells, you can apply these clean code principles and refactor it to be readable and maintainable. The sample final solution can be found in [`src/train.py`](src/train.py).
 
 Targets Python3.7+
 

@@ -1,4 +1,4 @@
-# clean-code-ml
+# clean-code-ml refactoring exercise
 
 ## Getting started
 
