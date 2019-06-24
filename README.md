@@ -1,6 +1,6 @@
 # clean-code-ml
 
-A set of clean code practices for data science workflows. Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and forked from [clean-code-python](https://github.com/zedr/clean-code-python).
+A set of clean code practices for machine learning and data science workflows. Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and forked from [clean-code-python](https://github.com/zedr/clean-code-python).
 
 ## Table of Contents
   1. [Introduction](#introduction)
