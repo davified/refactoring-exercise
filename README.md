@@ -1,4 +1,8 @@
-# clean-code-data-science
+# clean-code-ml
+
+TODO:
+- add reference to assignment / code-along README
+- add type hints example
 
 <!-- template -->
 ### _
@@ -35,7 +39,7 @@ A set of clean code practices for data science workflows. Forked from [clean-cod
 
 Software engineering principles, from Robert C. Martin's book
 [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for data science workflows in Python. This is not a style guide. It's a guide to producing
+adapted for machine learning / data science workflows in Python. This is not a style guide. It's a guide to producing
 readable, reusable, and refactorable software.
 
 Not every principle herein has to be strictly followed, and even fewer will be universally 
@@ -254,6 +258,8 @@ class Car:
     model: str
     color: str
 ```
+
+TODO: add how type hints can help here! 
 
 **[⬆ back to top](#table-of-contents)**
 

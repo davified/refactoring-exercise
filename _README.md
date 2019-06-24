@@ -1,19 +1,19 @@
-# clean-code-data-science
+# clean-code-ml
 
 ## Getting started
 
-1. Clone repository: `git clone https://github.com/davified/clean-code-data-science`
+1. Clone repository: `git clone https://github.com/davified/clean-code-ml`
 1. Install Docker ([Mac](https://docs.docker.com/docker-for-mac/install/), [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/))
 1. Start Docker on your desktop
 1. Build image and start container:
 
 ```shell
 # build docker image
-docker build . -t clean-code-data-science --build-arg user=$(whoami)
+docker build . -t clean-code-ml --build-arg user=$(whoami)
 
-docker run -it  -v $(pwd):/home/clean-code-data-science \
+docker run -it  -v $(pwd):/home/clean-code-ml \
                 -p 8888:8888 \
-                clean-code-data-science bash
+                clean-code-ml bash
 ```
 
 You're ready to roll! Here are some common commands that you can run in your dev workflow. Run these in the container.
