@@ -5,7 +5,7 @@ TODO:
 - add type hints example
 
 <!-- template -->
-### _
+### Template
 We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles.
 
 **Bad:**
@@ -37,32 +37,14 @@ A set of clean code practices for data science workflows. Forked from [clean-cod
 
 ## Introduction
 
-Software engineering principles, from Robert C. Martin's book
-[*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for machine learning / data science workflows in Python. This is not a style guide. It's a guide to producing
+Clean code practices (from [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) and [Refactoring](https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599)) adapted for machine learning / data science workflows in Python. This is not a style guide. It's a guide to producing
 readable, reusable, and refactorable software.
 
-Not every principle herein has to be strictly followed, and even fewer will be universally 
-agreed upon. These are guidelines and nothing more, but they are ones codified over many 
-years of collective experience by the authors of *Clean Code*.
-
-Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) and [clean-code-python](https://github.com/zedr/clean-code-python)
 
 Targets Python3.7+
 
 ## **Variables**
-### Use meaningful and pronounceable variable names
-
-**Bad:**
-```python
-ymdstr = datetime.date.today().strftime("%y-%m-%d")
-```
-
-**Good**:
-```python
-current_date: str = datetime.date.today().strftime("%y-%m-%d")
-```
-**[⬆ back to top](#table-of-contents)**
 
 ### Variable names should reveal intent
 We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles. 
@@ -73,11 +55,11 @@ One common culprit in data science code is dataframes. Every dataframe is named 
 ```python
 df = pd.read_csv('loans.csv')
 
-df = group_loans_by_user(df)
-df = filter_loans_by_year(df, year=2024)
+_df = df.groupby(['month']).sum()
+__df = filter_loans(_df, month=12)
 
-# let's try to calculate total loan amount 
-total_loan_amount = df... # wait, what is in df again?
+# let's try to calculate total loan amount for december
+total_loan_amount = __df... # wait, should I use df, _df or __df?
 ```
 
 **Good**:
@@ -86,12 +68,25 @@ One rule of thumb on how to name dataframes is to think about what is in each ro
 ```python
 loans = pd.read_csv('loans.csv')
 
-loans_by_user = group_loans_by_user(loans)
-loans_by_user_for_a_single_year = filter_loans_by_year(loans_by_user, year=2024)
+monthly_loans = loans.groupby(['month']).sum()
+monthly_loans_in_december = filter_loans(monthly_loans, month=12)
 
-# let's try to calculate total loan amount 
-total_loan_amount = loans_by_user_for_a_single_year.sum()
+# let's try to calculate total loan amount for december
+total_loan_amount = monthly_loans_in_december.sum()
 
+```
+**[⬆ back to top](#table-of-contents)**
+
+### Use meaningful and pronounceable variable names
+
+**Bad:**
+```python
+ymdstr = datetime.date.today().strftime("%y-%m-%d")
+```
+
+**Good**:
+```python
+current_date: str = datetime.date.today().strftime("%y-%m-%d")
 ```
 **[⬆ back to top](#table-of-contents)**
 
@@ -112,24 +107,6 @@ get_user_info()
 get_user_data()
 get_user_record()
 ```
-
-**Even better**
-Python is (also) an object oriented programming language. If it makes sense, package the functions together with the concrete implementation
-of the entity in your code, as instance attributes, property methods, or methods:
-
-```python
-class User:
-    info : str
-
-    @property
-    def data(self) -> dict:
-        # ...
-
-    def get_record(self) -> Union[Record, None]:
-        # ...
-```
-
-**[⬆ back to top](#table-of-contents)**
 
 ### No magic strings / magic numbers
 
@@ -152,22 +129,20 @@ time.sleep(SECONDS_IN_A_DAY)
 DRY stands for "Don't Repeat Yourself". If you find yourself changing the same thing in multiple places, then that thing which you're changing is a candidate for refactoring.
 
 **Bad:**
-Notice how `original_target_column` is duplicated in multiple places. If the column name in the data should change (e.g. to `literally_anything`), then we would need to waste effort in finding and replacing `original_target_column` in multiple places.
+Notice how `amount` is duplicated in multiple places. If the column name in the data should change (e.g. to `literally_anything`), then we would need to waste effort in finding and replacing `amount` in multiple places.
 
 ```python
-loans = loans.fillna('original_target_column')
-loans = loans.rename({'original_target_column': 'new_column_name'}, axis=1)
-loans.groupby(['original_target_column']).mean().sort_values(by='original_target_column')
+loans = loans.fillna({'amount': 0})
+loans.groupby(['amount']).mean().sort_values(by='amount')
 ```
 
 **Good**:
-Now, we only need to update the column name in one place.
+Now, should the `amount` column need to be changed, we can change it in one place:
 
 ```python
-target_column = 'original_target_column'
+target_column = 'amount'
 
-loans = loans.fillna(target_column)
-loans = loans.rename({target_column: 'new_column_name'}, axis=1)
+loans = loans.fillna({target_column: 0})
 loans.groupby([target_column]).mean().sort_values(by=target_column)
 ```
 **[⬆ back to top](#table-of-contents)**
@@ -238,8 +213,7 @@ for location in locations:
 
 ### Don't add unneeded context
 
-If your class/object name tells you something, don't repeat that in your
-variable name.
+If your class/object name tells you something, don't repeat that in your variable name.
 
 **Bad:**
 
