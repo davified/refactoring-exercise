@@ -1,15 +1,18 @@
 # clean-code-ml refactoring exercise
 
+## Dependencies
+
+1. Docker (Install for [Mac](https://docs.docker.com/docker-for-mac/install/), [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/), [Windows](https://docs.docker.com/docker-for-windows/install/))
+
 ## Getting started
 
 1. Clone repository: `git clone https://github.com/davified/clean-code-ml`
-1. Install Docker ([Mac](https://docs.docker.com/docker-for-mac/install/), [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/))
 1. Start Docker on your desktop
 1. Build image and start container:
 
 ```shell
 # build docker image
-docker build . -t clean-code-ml --build-arg user=$(whoami)
+docker build . -t clean-code-ml
 
 docker run -it  -v $(pwd):/home/clean-code-ml \
                 -p 8888:8888 \
@@ -27,6 +30,8 @@ nosetests --with-watch --rednose --nologcapture
 
 # starting jupyter notebook server on http://localhost:8888
 jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+
+# Now you can visit localhost:8888 on your browser. The required token can be found in the output of the `jupyter notebook ...` command
 ```
 
 Here are some other commands that you may find useful
