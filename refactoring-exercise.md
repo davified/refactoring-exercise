@@ -8,6 +8,7 @@
 
 1. Clone repository: `git clone https://github.com/davified/clean-code-ml`
 1. Start Docker on your desktop
+1. Update your git username and email in `Dockerfile`
 1. Build image and start container:
 
 ```shell

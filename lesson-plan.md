@@ -7,6 +7,22 @@ Pre-requisites for attendees:
 - Some basic experience with Python and Jupyter notebook
 - Some basic experience with scikit-learn / pandas
 
+Pre-workshop setup:
+- Load link to google doc (snippets will be shared here)
+- GitHub account
+- Fork and clone repo
+- CircleCI account
+- windows users:
+    - Download git bash
+- setup: follow instructions in README
+
+Demo:
+- how to write a unit test
+- how to write a unit test with dataframes
+- how to refactor 1 thing (use add_derived_title as demo)
+
+Note:
+- Commit your code after each exercise
 
 ### outline
 - Temperature check
@@ -59,15 +75,12 @@ My process for refactoring the titanic notebook
 - duplication in how test_df and train_df are joined. Why not just join it once, and use the combined df for all data transformations?
 
 ### Changelog
-- [Original notebook](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-original.ipynb)
-- [refactored-2](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-refactored-2.ipynb): Removed most print statements
-- [refactored-3](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-refactored-3.ipynb): Keep code DRY by extracting duplicated parts (in model training and accuracy score calculation) into a function
-    - Demonstrate technique of using explicit duplication as a way of identifying opportunities for DRYing out our code
-- [refactored-4](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-refactored-4.ipynb): Abstract away implementation details by creating `add_derived_title(df)`
-    - Can demonstrate the process of refactoring for this.
-- [refactored-5](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-refactored-5.ipynb): Go through entire notebook and list down code smells
-- [refactored-6](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-refactored-6.ipynb): Start fixing code smells one by one using refactoring process.
-- [refactored-7-final](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-refactored-7-final.ipynb): Ruthlessly removing comments and dead code from previous notebook
+- [titanic-exercise-0](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-0.ipynb): Original notebook
+- [titanic-exercise-1](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-1.ipynb): Removed most print statements
+    - Participants should use this notebook to list code smells
+- [titanic-exercise-2](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-2.ipynb): Add exercises for refactoring
+    - Participants should refactor this notebook
+- [titanic-exercise-solution](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-titanic-exercise-solution.ipynb): Final state of notebook after refactoring
 - [final code](https://github.com/davified/clean-code-ml/blob/master/src/train.py): Move code from jupyter notebook to plain Python file/module.
 
 ### How do we write clean code in a new project?
@@ -78,7 +91,6 @@ My process for refactoring the titanic notebook
 ### Note to self (david)
 - Set up split screen to reduce toggling
 - Write session plan (with time) on the wall and track progress as we go
-- TODO: prepare/find list of code smells and refactoring techniques
 
 ### Bonus
 - Set up CI pipeline on CircleCI (run unit tests + run jupyter notebook and ensure no errors)
