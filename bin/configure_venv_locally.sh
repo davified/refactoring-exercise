@@ -25,4 +25,4 @@ python3 -m venv .venv-local
 
 source .venv-local/bin/activate
 pip install --upgrade pip
-pip install -r requirements-dev.txt
+pip install -r requirements.txt

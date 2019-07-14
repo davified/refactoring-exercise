@@ -4,35 +4,16 @@ Target audience:
 - Data scientists / data science enthusiasts
 
 Pre-requisites for attendees:
-- Some basic experience with Python and Jupyter notebook
-- Some basic experience with scikit-learn / pandas
+- Some basic experience with Python, Jupyter notebook, `scikit-learn`, and `pandas`
 
-Pre-workshop setup:
-- Load link to google doc (snippets will be shared here)
-- GitHub account
-- Fork and clone repo
-- CircleCI account
-- windows users:
-    - Download git bash
-- setup: follow instructions in README
-
-Demo:
-- how to write a unit test
-- how to write a unit test with dataframes
-- how to refactor 1 thing (use add_derived_title as demo)
-
-Note:
-- Commit your code after each exercise
-
-### outline
+### Session outline
 - Temperature check
 - Why do we need clean code? (A: change and complexity)
     - Demo: pain of refactoring when code is dirty
     - 2 hats: data scientist (exploration) and software dev (production-ready and extensible codebase)
 - Context: titanic dataset
     - What the Jupyter notebook does
-    - Show data and dataframe 
-
+    - Show data and dataframe
 - What are code smells? (go through list of What does bad code / clean code look like?)
     - Explicitly call out code smells by name
 - How do we clean up code in an existing data science / ml codebase?
@@ -41,27 +22,18 @@ Note:
     - Technical crash course:
         - How to get set up
         - How to write unit tests (Python syntax + arrange act assert)
-- How do we write clean code in a new project?
+        - how to write a unit test with dataframes
+        - how to refactor 1 thing (use add_derived_title as demo)
 
 ### Refactoring process (for an existing notebook)
 
-My process for refactoring the titanic notebook
-- Ensure that notebooks when run from start to end
-- Read notebook and list code smells (see next section)
-- Make a copy of the original notebook (for comparing the end result later)
-- Start refactoring 
-    - Identify a block of code that can be extracted into a pure function
-    - Pseudo-TDD
-        - Write a unit test for it and run the unit tests in watch mode
-        - Create a Python module and create a function. Cut and paste existing implementation from notebook into that function
-        - Make the tests pass
-    - Import function back into the notebook
-    - Restart and run entire notebook (Unfortunately, until we have sufficient unit tests, we will still need manual “integration” tests for the time being.)
-    - [Optional] Refactor function some more
-    - Make a git commit
-    - Rinse and repeat
+- https://david-tan-2.gitbook.io/clean-code-ml/how-to-refactor-a-jupyter-notebook
 
 ### Code smells
+
+General [code smells](https://david-tan-2.gitbook.io/clean-code-ml/code-smells)
+
+Code smells specific to this notebook:
 - too many comments
 - bad variable names
     - train_df and test_df could be better named (without type information)
@@ -91,10 +63,13 @@ My process for refactoring the titanic notebook
 ### Note to self (david)
 - Set up split screen to reduce toggling
 - Write session plan (with time) on the wall and track progress as we go
+- Create a google doc and share bit.ly link with class
 
 ### Bonus
 - Set up CI pipeline on CircleCI (run unit tests + run jupyter notebook and ensure no errors)
 
 
 ### reading list
-- ...
+- [clean-code-ml](https://app.gitbook.com/@david-tan-2/s/clean-code-ml/)
+- http://refactoring.guru/ - Examples are in Java/C#/PHP, but the principles are transferrable
+- [Refactoring (2nd edition)](https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599) - Examples are in Javascript, but the principles are transferrable
