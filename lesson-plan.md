@@ -8,22 +8,22 @@ Pre-requisites for attendees:
 
 ### Session outline
 - Temperature check
-- Why do we need clean code? (A: change and complexity)
+- Act 1: Why do we need clean code? (A: change and complexity)
     - Demo: pain of refactoring when code is dirty
     - 2 hats: data scientist (exploration) and software dev (production-ready and extensible codebase)
-- Context: titanic dataset
+- Interlude: Context on titanic dataset and notebook
     - What the Jupyter notebook does
     - Show data and dataframe
-- What are code smells? (go through list of What does bad code / clean code look like?)
+- Act 2: What are code smells? (go through list of What does bad code / clean code look like?)
     - Explicitly call out code smells by name
-- How do we clean up code in an existing data science / ml codebase?
+- Act 3: How do we clean up code in an existing data science / ml codebase?
     - go through refactoring process below
-- Hands-on exercise in refactoring titanic notebook)
-    - Technical crash course:
-        - How to get set up
-        - How to write unit tests (Python syntax + arrange act assert)
-        - how to write a unit test with dataframes
-        - how to refactor 1 thing (use add_derived_title as demo)
+    - Hands-on exercise in refactoring titanic notebook)
+- Technical crash course (before hands-on exercise):
+    - How to get set up (Docker, run tests, IDE configuration)
+    - How to write unit tests (Python syntax + arrange act assert)
+    - how to write a unit test with dataframes
+    - how to refactor 1 thing (use add_derived_title as demo)
 
 ### Refactoring process (for an existing notebook)
 
@@ -55,7 +55,7 @@ Pre-requisites for attendees:
     - Participants should use this notebook to list code smells
 - [titanic-exercise-2](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-2.ipynb): Add exercises for refactoring
     - Participants should refactor this notebook
-- [titanic-exercise-solution](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-titanic-exercise-solution.ipynb): Final state of notebook after refactoring
+- [titanic-exercise-solution](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-solution.ipynb): Final state of notebook after refactoring
 - [final code](https://github.com/davified/clean-code-ml/blob/master/src/train.py): Move code from jupyter notebook to plain Python file/module.
 
 ### Note to self (david)
