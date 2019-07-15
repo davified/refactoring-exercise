@@ -8,26 +8,23 @@ Pre-requisites for attendees:
 
 ### Session outline
 - Temperature check
-- Act 1: Why do we need clean code? (A: change and complexity)
+- Part 1: Why do we need clean code? (A: change and complexity)
     - Demo: pain of refactoring when code is dirty
     - 2 hats: data scientist (exploration) and software dev (production-ready and extensible codebase)
-- Interlude: Context on titanic dataset and notebook
+- Context: Context on titanic dataset and notebook
     - What the Jupyter notebook does
     - Show data and dataframe
-- Act 2: What are code smells? (go through list of What does bad code / clean code look like?)
+- Part 2: What are code smells? (go through list of What does bad code / clean code look like?)
     - Explicitly call out code smells by name
-- Act 3: How do we clean up code in an existing data science / ml codebase?
-    - go through refactoring process below
-    - Hands-on exercise in refactoring titanic notebook)
-- Technical crash course (before hands-on exercise):
+- Part 3: How do we clean up code in an existing data science / ml codebase?
+    - go through [refactoring process](https://david-tan-2.gitbook.io/clean-code-ml/how-to-refactor-a-jupyter-notebook)
+- Technical crash course / demo / code-along:
     - How to get set up (Docker, run tests, IDE configuration)
     - How to write unit tests (Python syntax + arrange act assert)
-    - how to write a unit test with dataframes
+    - How to write a unit test with dataframes
     - how to refactor 1 thing (use add_derived_title as demo)
-
-### Refactoring process (for an existing notebook)
-
-- [How to refactor a Jupyter notebook](https://david-tan-2.gitbook.io/clean-code-ml/how-to-refactor-a-jupyter-notebook)
+- Part 4: Hands-on exercise in refactoring titanic notebook)
+- Bonus: Set up CI pipeline on CircleCI
 
 ### Code smells
 
@@ -45,9 +42,6 @@ Pre-requisites for attendees:
     - duplication in model training code. Can extract to a function.
     - duplication in EDA code. Can extract to a function.
     - duplication in how test_df and train_df are joined. Why not just join it once, and use the combined df for all data transformations?
-
-### Bonus
-- Set up CI pipeline on CircleCI (run unit tests + run jupyter notebook and ensure no errors)
 
 ### Changelog
 - [titanic-exercise-0](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-0.ipynb): Original notebook
