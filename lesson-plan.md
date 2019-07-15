@@ -8,14 +8,15 @@ Pre-requisites for attendees:
 
 ### Session outline
 - Temperature check
-- Part 1: Why do we need clean code? (A: change and complexity)
+- Part 1: Why do we need clean code? (Answer: change and complexity)
     - Demo: pain of refactoring when code is dirty
     - 2 hats: data scientist (exploration) and software dev (production-ready and extensible codebase)
 - Context: Context on titanic dataset and notebook
     - What the Jupyter notebook does
     - Show data and dataframe
-- Part 2: What are code smells? (go through list of What does bad code / clean code look like?)
-    - Explicitly call out code smells by name
+- Part 2: What are [code smells](https://david-tan-2.gitbook.io/clean-code-ml/code-smells)? 
+    - Go through list of What does bad code / clean code look like?
+    - Exercise: go through notebook and explicitly call out code smells by name
 - Part 3: How do we clean up code in an existing data science / ml codebase?
     - go through [refactoring process](https://david-tan-2.gitbook.io/clean-code-ml/how-to-refactor-a-jupyter-notebook)
 - Technical crash course / demo / code-along:
@@ -27,8 +28,6 @@ Pre-requisites for attendees:
 - Bonus: Set up CI pipeline on CircleCI
 
 ### Code smells
-
-- General [code smells](https://david-tan-2.gitbook.io/clean-code-ml/code-smells)
 
 - Code smells specific to this notebook:
     - too many comments
