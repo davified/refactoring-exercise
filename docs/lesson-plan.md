@@ -55,3 +55,7 @@ Pre-requisites for attendees:
 - Set up split screen to reduce toggling
 - Write session plan (with time) on the wall and track progress as we go
 - Create a google doc and share bit.ly link with class
+- Get feedback on 
+    - code smells in clean-code-ml
+    - refactoring notebook kata
+    - workshop (any general feedback)
