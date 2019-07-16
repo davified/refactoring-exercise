@@ -18,7 +18,7 @@ Pre-requisites for attendees:
     - Go through list of What does bad code / clean code look like?
     - Exercise: go through notebook and explicitly call out code smells by name
 - Part 3: How do we clean up code in an existing data science / ml codebase?
-    - go through [refactoring process](https://david-tan-2.gitbook.io/clean-code-ml/how-to-refactor-a-jupyter-notebook)
+    - go through [refactoring process](./refactoring-process.md)
 - Technical crash course / demo / code-along:
     - How to get set up (Docker, run tests, IDE configuration)
     - How to write unit tests (Python syntax + arrange act assert)
