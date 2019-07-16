@@ -6,6 +6,9 @@ RUN apt-get update \
 RUN git config --global user.email "your@email.com"
 RUN git config --global user.name "your-github-username"
 
+xx
+# update the lines above with your git username and email before running `docker build`
+
 WORKDIR /home/clean-code-ml
 
 COPY . /home/clean-code-ml
