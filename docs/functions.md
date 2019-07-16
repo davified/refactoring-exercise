@@ -195,13 +195,13 @@ Your development experience will also be improved because your IDE will be able 
 
 Without type hints, we are forced to embed type information in variable names (e.g. `pd_series`). This can make variable names unnecessarily long. Also, our IDE is not able to give us auto-complete hints, and as a result, we have to hop to the source file to find out what parameters this function accepts.
 
-<img src="./images/type_hints_bad_example.png" width=500 alt="type hints bad example">
+<img src="../images/type_hints_bad_example.png" width=500 alt="type hints bad example">
 
 **Good**:
 
 With type hints, we can name our variables sensibly, and the IDE now offers better autocompletion and make us more productive and less error-prone.
 
-<img src="./images/type_hints_good_example.png" width=500 alt="type hints good example">
+<img src="../images/type_hints_good_example.png" width=500 alt="type hints good example">
 
 It's important to note that type hints are meant to be entirely ignored by the Python runtime, and are checked only by 3rd party tools like `mypy` and Pycharm's integrated checker. You can read more about type hints and how to use type checkers [here](https://www.bernat.tech/the-state-of-type-hints-in-python/). 
 
