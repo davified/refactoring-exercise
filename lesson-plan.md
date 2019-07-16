@@ -14,7 +14,7 @@ Pre-requisites for attendees:
 - Context: Context on titanic dataset and notebook
     - What the Jupyter notebook does
     - Show data and dataframe
-- Part 2: What are [code smells](https://david-tan-2.gitbook.io/clean-code-ml/code-smells)? 
+- Part 2: What are [code smells](./README.md)? 
     - Go through list of What does bad code / clean code look like?
     - Exercise: go through notebook and explicitly call out code smells by name
 - Part 3: How do we clean up code in an existing data science / ml codebase?
