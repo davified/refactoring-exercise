@@ -27,8 +27,7 @@
     - Remove dead code
     - Avoid print statements (even glorified print statements such as df.head(), df.describe(), df.plot())
 - [Design](docs/design.md)
-    - Set boundaries (Keep implementation details hidden). When implementation details are all laid bare in the notebook without any abstractions (functions), we are forced to understand the how's in order to know what's happening
-    - Shotgun surgery. When you want to change one thing, you end up having to make changes in many places
+    - Set boundaries (Keep implementation details hidden)
 
 ## Introduction
 
