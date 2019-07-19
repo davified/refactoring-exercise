@@ -27,7 +27,7 @@
     - Use default arguments instead of short circuiting or conditionals
     - Don't use flags as function parameters
 - [Design](docs/design.md)
-    - Set boundaries (Keep implementation details hidden)
+    - Avoid exposing your internals (Keep implementation details hidden)
 
 ## Introduction
 
