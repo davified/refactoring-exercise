@@ -20,12 +20,20 @@ Please ensure you have the following:
 1. Build image and start container:
 
 ```shell
-# build docker image
+# build docker image [Mac / Linux users]
 docker build . -t clean-code-ml
 
+# build docker image [Windows users]
+MSYS_NO_PATHCONV=1 docker build . -t ml-app-template
+
+# start docker container [Mac / Linux users]
 docker run -it  -v $(pwd):/home/clean-code-ml \
                 -p 8888:8888 \
                 clean-code-ml bash
+
+# start docker container [Windows users]
+winpty docker run -it -v C:\\Users\\path\\to\\your\\clean-code-ml:/home/clean-code-ml -p 8080:8080 -p 8888:8888 clean-code-ml bash
+# Note: to find the path, you can run `pwd` in git bash, and manually replace forward slashes (/) with double backslashes (\\)
 ```
 
 You're ready to roll! Here are some common commands that you can run in your dev workflow. Run these in the container.
