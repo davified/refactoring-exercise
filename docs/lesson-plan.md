@@ -8,18 +8,30 @@ Pre-requisites for attendees:
 
 ### Session outline
 - Temperature check
-- Why do we need clean code? (Answer: change and complexity)
+    - Python, jupyter, ML, unit testing
+    - Shuffle seats if necessary
+- Why this session? What's wrong with jupyter notebooks (Answer: change and complexity)
+    - Jargon:
+        - code smells ("if it stinks, change it", Grandma Beck)
+            - go through cheat-sheet.md
+        - refactoring
 - Code smell #1 (print statements)
     - First, show the titanic dataset and what the notebook is doing
-    - Compare [exercise-0](../notebooks/titanic-exercise-0.ipynb) with [exercise-1](../notebooks/titanic-exercise-1.ipynb)
+    - Starter code: [exercise-0](../notebooks/titanic-exercise-0.ipynb)
+        - Look at this, and call out the first code smell that comes to your mind
+    - Refactored code: [exercise-1](../notebooks/titanic-exercise-1.ipynb)
 - Code smell #2 (exposed internals)
-    - Compare [exercise-1](../notebooks/titanic-exercise-1.ipynb) with [exercise-2](../notebooks/titanic-exercise-2.ipynb)
+    - Starter code: [exercise-1](../notebooks/titanic-exercise-1.ipynb) 
+    - Refactored code: [exercise-2](../notebooks/titanic-exercise-2.ipynb)
+    - Use [train.py](https://github.com/davified/clean-code-ml/blob/master/src/train.py) to show the value of functions / abstractions
 - Code smell #3 (Duplication)
     - DEMO + EXERCISE 1: How to refactor to functions - train_model()
-    - Compare [exercise-2](../notebooks/titanic-exercise-2.ipynb) with [exercise-3](../notebooks/titanic-exercise-3.ipynb)
+    - Starter code: [exercise-2](../notebooks/titanic-exercise-2.ipynb) 
+    - Refactored code: [exercise-3](../notebooks/titanic-exercise-3.ipynb)
 - Break 
     - If you can't run `docker run ...`, please ask us for help.
 - Code smell #4 (No unit tests):
+    - Starter code: [exercise-3](../notebooks/titanic-exercise-3.ipynb). What are any other code smells?
     - Demo + codealong: How to write a unit test + arrange/act/assert
     - Demo + codealong: How to write a unit test with dataframes
     - Demo + exercise 2
