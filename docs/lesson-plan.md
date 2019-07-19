@@ -17,28 +17,28 @@ Pre-requisites for attendees:
         - refactoring
 - Code smell #1 (print statements)
     - First, show the titanic dataset and what the notebook is doing
-    - Starter code: [exercise-0](../notebooks/titanic-exercise-0.ipynb)
+    - Starter code: [notebook-0](../notebooks/titanic-notebook-0.ipynb)
         - Look at this, and call out the first code smell that comes to your mind
-    - Refactored code: [exercise-1](../notebooks/titanic-exercise-1.ipynb)
+    - Refactored code: [notebook-1](../notebooks/titanic-notebook-1.ipynb)
 - Code smell #2 (exposed internals)
-    - Starter code: [exercise-1](../notebooks/titanic-exercise-1.ipynb) 
-    - Refactored code: [exercise-2](../notebooks/titanic-exercise-2.ipynb)
+    - Starter code: [notebook-1](../notebooks/titanic-notebook-1.ipynb) 
+    - Refactored code: [notebook-2](../notebooks/titanic-notebook-2.ipynb)
     - Use [train.py](https://github.com/davified/clean-code-ml/blob/master/src/train.py) to show the value of functions / abstractions
 - Code smell #3 (Duplication)
     - DEMO + EXERCISE 1: How to refactor to functions - train_model()
-    - Starter code: [exercise-2](../notebooks/titanic-exercise-2.ipynb) 
-    - Refactored code: [exercise-3](../notebooks/titanic-exercise-3.ipynb)
+    - Starter code: [notebook-2](../notebooks/titanic-notebook-2.ipynb) 
+    - Refactored code: [notebook-3](../notebooks/titanic-notebook-3.ipynb)
 - Break 
     - If you can't run `docker run ...`, please ask us for help.
 - Code smell #4 (No unit tests):
-    - Starter code: [exercise-3](../notebooks/titanic-exercise-3.ipynb). What are any other code smells?
+    - Starter code: [notebook-3](../notebooks/titanic-notebook-3.ipynb). What are any other code smells?
     - Demo + codealong: How to write a unit test + arrange/act/assert
     - Demo + codealong: How to write a unit test with dataframes
     - Demo + exercise 2
     - Exercise 3
 - Conclusion
     - Show final solution (ask for 1 volunteer) 
-    - Show [titanic-exercise-solution](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-exercise-solution.ipynb) and [`src/train.py`](https://github.com/davified/clean-code-ml/blob/master/src/train.py)
+    - Show [titanic-notebook-solution](https://github.com/davified/clean-code-ml/blob/master/notebooks/titanic-notebook-solution.ipynb) and [`src/train.py`](https://github.com/davified/clean-code-ml/blob/master/src/train.py)
     - Full list of [code smells](../README.md)?
     - Take-home reading: [refactoring process](./refactoring-process.md)
 - Bonus: CI
