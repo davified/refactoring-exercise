@@ -24,7 +24,7 @@ Please ensure you have the following:
 docker build . -t clean-code-ml
 
 # build docker image [Windows users]
-MSYS_NO_PATHCONV=1 docker build . -t ml-app-template
+MSYS_NO_PATHCONV=1 docker build . -t clean-code-ml
 
 # start docker container [Mac / Linux users]
 docker run -it  -v $(pwd):/home/clean-code-ml \
