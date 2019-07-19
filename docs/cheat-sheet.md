@@ -17,6 +17,8 @@
 [Design](#design)
 - Don't expose your internals (Keep implementation details hidden)
 
+---
+
 ## Variables
 
 ### Variable names should reveal intent
@@ -52,6 +54,8 @@ total_loan_amount = monthly_loans_in_december.sum()
 
 **[⬆ back to top](#table-of-contents)**
 
+---
+
 ## Dispensables
 
 ### Avoid comments
@@ -77,6 +81,8 @@ if (employee.flags and HOURLY_FLAG) and (employee.age > 65):
 if employee.isEligibleForBenefits():
     # do something
 ```
+
+---
 
 ### Remove dead code
 
@@ -112,6 +118,10 @@ model = train_model(df)
 ```
 
 **[⬆ back to top](#table-of-contents)**
+
+---
+
+## Functions
 
 ### Use functions to keep code "DRY"
 
@@ -163,10 +173,14 @@ gaussian_model     , gaussian_accuracy      = train_model(GaussianNB, X_train, Y
 
 **Tip**: Notice how the symmetry of the 3 code blocks in the bad example made it easier for us to identify and refactor the duplicated code? One useful practice in eliminating duplication is to **first make the duplication as obvious as possible**. This makes it easier for us to identify opportunities for extracting the duplication into their appropriate homes.
 
+---
+
 ### Functions should do one thing
 This is by far the most important rule in software engineering. When functions do more than one thing, they are harder to compose, test, and reason about. When you can isolate a function to just one action, they can be refactored easily and your code will read much cleaner. If you take nothing else away from this guide other than this, you'll be ahead of many developers.
 
 **[⬆ back to top](#table-of-contents)**
+
+---
 
 ## Design
 
