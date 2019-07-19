@@ -215,7 +215,7 @@ Now, you do need to have side effects in a program on occasion - for example, li
 The main point is to avoid common pitfalls like sharing state between objects without any structure, using mutable data types that can be written to by anything, or using an instance of a class, and not centralizing where your side effects occur. If you can do this, you will be happier than the vast majority of other programmers.
 
 **Bad:**
-
+<!-- TODO: update to be a jupyter notebook code smell of depending on global vars -->
 ```python
 # Global variable referenced by following function.
 # If another function used this name, now it'd be an array and could break.

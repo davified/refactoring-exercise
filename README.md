@@ -11,6 +11,10 @@
     - Use explanatory variables
     - Avoid mental mapping
     - Don't add unneeded context
+- [Dispensables](docs/dispensables.md)
+    - Avoid comments
+    - Remove dead code
+    - Avoid print statements (even glorified print statements such as df.head(), df.describe(), df.plot())
 - [Functions](docs/functions.md)
     - Use functions to keep code "DRY"
     - Functions should do one thing
@@ -22,10 +26,6 @@
     - Function arguments (2 or fewer ideally)
     - Use default arguments instead of short circuiting or conditionals
     - Don't use flags as function parameters
-- [Dispensables](docs/dispensables.md)
-    - Avoid comments
-    - Remove dead code
-    - Avoid print statements (even glorified print statements such as df.head(), df.describe(), df.plot())
 - [Design](docs/design.md)
     - Set boundaries (Keep implementation details hidden)
 
