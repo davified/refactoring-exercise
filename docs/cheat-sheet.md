@@ -213,3 +213,4 @@ df['FareBand'] = df['Fare']
 df['FareBand'] = categorize_column(df['Fare'], num_bins=4)
 ```
 
+**[⬆ back to top](#table-of-contents)**
