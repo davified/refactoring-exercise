@@ -29,7 +29,7 @@ Pre-requisites for attendees:
     - Starter code: [notebook-2](../notebooks/titanic-notebook-2.ipynb) 
     - Refactored code: [notebook-3](../notebooks/titanic-notebook-3.ipynb)
 - Break 
-    - If you can't run `docker run ...`, please ask us for help.
+    - If you cannot run nosetests or start jupyter notebook, please ask us for help.
 - Code smell #4 (No unit tests):
     - Starter code: [notebook-3](../notebooks/titanic-notebook-3.ipynb). What are any other code smells?
     - Demo + codealong: How to write a unit test + arrange/act/assert
@@ -42,10 +42,6 @@ Pre-requisites for attendees:
     - Full list of [code smells](../README.md)?
     - Take-home reading: [refactoring process](./refactoring-process.md)
 - Bonus: CI
-
-Questions:
-- where to place
-    - How to get set up (Docker, run tests, IDE configuration)
 
 ### Note to self (david)
 - Set up split screen to reduce toggling

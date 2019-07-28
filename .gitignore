@@ -1,5 +1,8 @@
 .venv*/
 
+# miniconda installer
+bin/miniconda3.sh
+
 **/__pycache__
 models/*.joblib
 !models/keep

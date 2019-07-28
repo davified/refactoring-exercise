@@ -8,35 +8,14 @@ Please ensure you have the following:
 - an IDE ([VS Code](https://code.visualstudio.com/Download) or [PyCharm](https://www.jetbrains.com/pycharm/download/))
 - Windows users:
     - Download [Git Bash](https://gitforwindows.org/)
-- Docker for Desktop (Install for [Mac](https://docs.docker.com/docker-for-mac/install/), [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/), [Windows](https://docs.docker.com/docker-for-windows/install/))
-    - If you don't have a dockerhub account, you will be prompted to create one. It's free
 
 ## Getting started
 
 1. Fork repo
 1. Clone repository: `git clone https://github.com/YOUR_USERNAME/clean-code-ml`
-1. Start Docker on your desktop
-1. Update your git username and email in `Dockerfile`
-1. Build image and start container:
+1. Run `bin/setup.sh`. This will install miniconda3 if it's not already installed, and install project-level dependencies specified in `./environment.yml`
 
-```shell
-# build docker image [Mac / Linux users]
-docker build . -t clean-code-ml
-
-# build docker image [Windows users]
-MSYS_NO_PATHCONV=1 docker build . -t clean-code-ml
-
-# start docker container [Mac / Linux users]
-docker run -it  -v $(pwd):/home/clean-code-ml \
-                -p 8888:8888 \
-                clean-code-ml bash
-
-# start docker container [Windows users]
-winpty docker run -it -v C:\\Users\\path\\to\\your\\clean-code-ml:/home/clean-code-ml -p 8080:8080 -p 8888:8888 clean-code-ml bash
-# Note: to find the path, you can run `pwd` in git bash, and manually replace forward slashes (/) with double backslashes (\\)
-```
-
-You're ready to roll! Here are some common commands that you can run in your dev workflow. Run these in the container.
+You're ready to roll! Here are some common commands that you can run in your dev workflow.
 
 #### Run tests
 
@@ -48,22 +27,13 @@ nosetests
 nosetests --with-watch --rednose --nologcapture
 ```
 
-#### Start another bash shell in the running container
-```shell
-# see list of running containers
-docker ps
-
-# start a bash shell in a running container
-docker exec -it <container-id> bash
-```
-
 #### Start jupyter notebook
 
 ```shell
 # starting jupyter notebook server on http://localhost:8888
-jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+jupyter notebook
 
-# Now you can visit localhost:8888 on your browser. The required token can be found in the output of the `jupyter notebook ...` command
+# Now you can visit localhost:8888 on your browser.
 ```
 
 ## IDE configuration
