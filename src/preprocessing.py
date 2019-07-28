@@ -1,5 +1,6 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+
 
 def add_derived_title(df):
     titles = df['Name'].str.extract(' ([A-Za-z]+)\.', expand=False)
@@ -25,9 +26,10 @@ def add_is_alone_column(df):
     df['IsAlone'] = 0
     df.loc[df['FamilySize'] == 1, 'IsAlone'] = 1
 
-    df = df.drop(['FamilySize'], axis = 1)
+    df = df.drop(['FamilySize'], axis=1)
 
     return df
+
 
 def impute_nans(df, categorical_columns=[], continuous_columns=[]):
     for column in categorical_columns + continuous_columns:
@@ -36,16 +38,18 @@ def impute_nans(df, categorical_columns=[], continuous_columns=[]):
         if column in continuous_columns:
             replacement = df[column].dropna().median()
         df[column] = df[column].fillna(replacement)
-    
+
     return df
+
 
 def add_categorical_columns(df):
     df = df.copy()
 
     df['AgeGroup'] = categorize_column(df['Age'], num_bins=5)
     df['FareBand'] = categorize_column(df['Fare'], num_bins=4)
-    df['Sex'] = df['Sex'].map( {'female': 1, 'male': 0} ).astype(int)
-    df['Embarked'] = df['Embarked'].map( {'S': 0, 'C': 1, 'Q': 2} ).astype(int)
-    df['Title'] = df['Title'].map({"Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5}).fillna(0)
+    df['Sex'] = df['Sex'].map({'female': 1, 'male': 0}).astype(int)
+    df['Embarked'] = df['Embarked'].map({'S': 0, 'C': 1, 'Q': 2}).astype(int)
+    df['Title'] = df['Title'].map(
+        {"Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5}).fillna(0)
 
     return df

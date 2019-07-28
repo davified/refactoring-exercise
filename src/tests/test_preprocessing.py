@@ -1,8 +1,11 @@
 import unittest
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 from pandas.testing import assert_frame_equal, assert_series_equal
-from src.preprocessing import add_derived_title, categorize_column, add_is_alone_column, impute_nans
+
+from src.preprocessing import (add_derived_title, add_is_alone_column,
+                               categorize_column, impute_nans)
 
 
 class TestProcessing(unittest.TestCase):
@@ -41,14 +44,17 @@ class TestProcessing(unittest.TestCase):
         assert_frame_equal(expected, add_derived_title(df))
 
     def test_categorize_column_into_2_categories(self):
-        series = pd.Series([5, 20, 10, 25]) # bins:  [ 4.98 15.   25.  ]
+        series = pd.Series([5, 20, 10, 25])  # bins:  [ 4.98 15.   25.  ]
 
-        assert_series_equal(pd.Series([1, 2, 1, 2]), categorize_column(series, num_bins=2))
+        assert_series_equal(
+            pd.Series([1, 2, 1, 2]), categorize_column(series, num_bins=2))
 
     def test_categorize_column_into_5_categories(self):
-        series = pd.Series([0, 30, 50, 80, 100]) # bins: [ -0.1,  20. ,  40. ,  60. ,  80. , 100. ]
+        # bins: [ -0.1,  20. ,  40. ,  60. ,  80. , 100. ]
+        series = pd.Series([0, 30, 50, 80, 100])
 
-        assert_series_equal(pd.Series([1, 2, 3, 4, 5]), categorize_column(series, num_bins=5))
+        assert_series_equal(
+            pd.Series([1, 2, 3, 4, 5]), categorize_column(series, num_bins=5))
 
     def test_add_is_alone_column(self):
         # df = df['SibSp'] + df['Parch']
@@ -66,7 +72,6 @@ class TestProcessing(unittest.TestCase):
         print(add_is_alone_column(df))
         assert_frame_equal(expected, add_is_alone_column(df))
 
-
     def test_impute_nans_for_categorical_columns_replaces_na_with_most_frequent_mode(self):
         df = pd.DataFrame({
             'some_categorical_column': ['A', 'A', 'B', np.nan, 'A', np.nan]
@@ -76,15 +81,18 @@ class TestProcessing(unittest.TestCase):
             'some_categorical_column': ['A', 'A', 'B', 'A', 'A', 'A']
         })
 
-        assert_frame_equal(expected, impute_nans(df, categorical_columns=['some_categorical_column']))
+        assert_frame_equal(expected, impute_nans(
+            df, categorical_columns=['some_categorical_column']))
 
     def test_impute_nans_for_continuous_columns_replaces_na_with_median(self):
         df = pd.DataFrame({
-            'some_continuous_column': [10, 20, np.nan, np.nan, 30]  # median value: 20
+            # median value: 20
+            'some_continuous_column': [10, 20, np.nan, np.nan, 30]
         })
 
         expected = pd.DataFrame({
             'some_continuous_column': [10, 20, 20, 20, 30]
         })
 
-        assert_frame_equal(expected, impute_nans(df, continuous_columns=['some_continuous_column']), check_dtype=False)
+        assert_frame_equal(expected, impute_nans(df, continuous_columns=[
+                           'some_continuous_column']), check_dtype=False)
