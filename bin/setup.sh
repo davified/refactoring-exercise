@@ -13,11 +13,14 @@ if [[ $OSTYPE != "darwin"* ]]; then
   exit 0
 fi
 
-export PATH="$HOME/miniconda3/bin:$PATH"
+export PATH="$PATH:$HOME/miniconda3/bin"
 echo "[INFO] Adding miniconda bin path to current session"
 if [[ -f ~/.zshrc ]]; then
   echo "[INFO] Adding miniconda bin path to ~/.zshrc config file"
-  grep -q -F 'export PATH="$HOME/miniconda3/bin:$PATH"' ~/.zshrc || echo 'export PATH="$HOME/miniconda3/bin:$PATH"' >> ~/.zshrc
+  grep -q -F 'export PATH="$PATH:$HOME/miniconda3/bin"' ~/.zshrc || echo 'export PATH="$PATH:$HOME/miniconda3/bin"' >> ~/.zshrc
+elif [[ -f ~/.bashrc ]]; then
+  echo "[INFO] Adding miniconda bin path to ~/.bashrc config file"
+  grep -q -F 'export PATH="$PATH:$HOME/miniconda3/bin"' ~/.bashrc || echo 'export PATH="$PATH:$HOME/miniconda3/bin"' >> ~/.bashrc
 fi
 
 if [[ `which conda` ]]; then
@@ -44,5 +47,5 @@ fi
 
 echo "[INFO] Done!"
 echo "[INFO] To activate the virtual environment, run: source activate ${virtual_env_name}"
-echo "[INFO] If you see a 'command not found: conda' error message, restart your shell and run 'conda init' to do a one-time configuration of your shell"
+echo "[INFO] If you see a 'command not found: conda' error message, restart your shell/terminal"
 echo "[INFO] To deactivate the virtual environment, run: source deactivate"
