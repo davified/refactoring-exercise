@@ -18,5 +18,8 @@ models/*.joblib
 # linters
 .mypy_cache
 
+# personal notes
+docs/todos.md
+
 # OSX
 .DS_Store
