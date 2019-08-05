@@ -8,7 +8,7 @@ def add_derived_title(df):
     titles = titles.replace(['Lady', 'Countess', 'Capt', 'Col',
                              'Don', 'Dr', 'Major', 'Rev', 'Sir', 'Jonkheer', 'Dona'], 'Rare')
     titles = titles.replace(['Ms', 'Mlle'], 'Miss')
-    titles = titles.replace(['Mme'], 'Mrs')
+    titles = titles.replace(['Mme'], 'Ms')
 
     df['Title'] = titles
 
