@@ -17,22 +17,21 @@ Please ensure you have the following:
 
 You're ready to roll! Here are some common commands that you can run in your dev workflow.
 
-#### Run tests
-
 ```shell
+# activate virtual environment
+source activate clean-code-ml
+
+# deactivate virtual environment
+conda deactivate
+
 # run unit tests
 nosetests
 
 # run unit tests in watch mode and color output
 nosetests --with-watch --rednose --nologcapture
-```
 
-#### Start jupyter notebook
-
-```shell
-# starting jupyter notebook server on http://localhost:8888
+# start jupyter notebook server
 jupyter notebook
-
 # Now you can visit localhost:8888 on your browser.
 ```
 
