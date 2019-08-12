@@ -15,7 +15,6 @@ df = add_derived_title(df)
 df = add_is_alone_column(df)
 df = add_categorical_columns(df)
 
-df['AgeGroup*Class'] = df['AgeGroup'] * df['Pclass']
 df = df.drop(['Parch', 'SibSp', 'Name', 'PassengerId',
               'Ticket', 'Cabin'], axis=1)
 
