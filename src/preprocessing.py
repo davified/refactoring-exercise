@@ -53,3 +53,12 @@ def add_categorical_columns(df):
         {"Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5}).fillna(0)
 
     return df
+
+def train_model(ModelClass, X_train, Y_train, **kwargs):
+    model = ModelClass(**kwargs)
+    model.fit(X_train, Y_train)
+
+    accuracy_score = round(model.score(X_train, Y_train) * 100, 2)
+    print(f'accuracy ({ModelClass.__name__}): {accuracy_score}')
+
+    return model, accuracy_score

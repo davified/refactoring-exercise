@@ -2,10 +2,11 @@ import unittest
 
 import numpy as np
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
 from pandas.testing import assert_frame_equal, assert_series_equal
 
 from src.preprocessing import (add_derived_title, add_is_alone_column,
-                               categorize_column, impute_nans)
+                               categorize_column, impute_nans, train_model)
 
 
 class TestProcessing(unittest.TestCase):
@@ -96,3 +97,10 @@ class TestProcessing(unittest.TestCase):
 
         assert_frame_equal(expected, impute_nans(df, continuous_columns=[
                            'some_continuous_column']), check_dtype=False)
+
+
+    def test_train_model_should_return_instance_of_model_and_accuracy_score(self):
+        model, accuracy = train_model(DecisionTreeClassifier, [[1, 1, 1], [1, 1, 1]], [0, 1])
+
+        self.assertIsInstance(model, DecisionTreeClassifier)
+        self.assertIsInstance(accuracy, float)
