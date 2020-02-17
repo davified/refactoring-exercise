@@ -1,6 +1,6 @@
-## **Design**
+# **Design**
 
-### Avoid exposing your internals (Keep implementation details hidden)
+## Avoid exposing your internals (Keep implementation details hidden)
 
 Functions and classes simplify our code by abstracting away complicated implementation details and replacing them with a simpler representation - its name. When implementation details are all laid bare in a Jupyter notebook without any abstractions (functions), we are forced to understand the **how**'s in order to find out **what**'s happening.
 

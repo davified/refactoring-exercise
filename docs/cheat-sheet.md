@@ -3,18 +3,22 @@
 ## Table of Contents
 
 [Variables](#variables)
+
 - Variable names should reveal intent
 
 [Dispensables](#dispensables)
+
 - Avoid comments
 - Remove dead code
 - Avoid print statements (even glorified print statements such as df.head(), df.describe(), df.plot())
 
 [Functions](#functions)
+
 - Use functions to keep code "DRY"
 - Functions should do one thing
 
 [Design](#design)
+
 - Don't expose your internals (Keep implementation details hidden)
 
 ---
@@ -22,9 +26,10 @@
 ## Variables
 
 ### Variable names should reveal intent
-We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles. 
 
-One common culprit in data science code is dataframes. Every dataframe is named as `df`. In software programming, it's an unusual (and bad) practice to embed information about variable types in the variable name (e.g. we would probably never write `string = 'Hello friends'`. Instead, we would write `greeting = 'Hello friends'`). 
+We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles.
+
+One common culprit in data science code is dataframes. Every dataframe is named as `df`. In software programming, it's an unusual (and bad) practice to embed information about variable types in the variable name (e.g. we would probably never write `string = 'Hello friends'`. Instead, we would write `greeting = 'Hello friends'`).
 
 **Bad:**
 
@@ -61,6 +66,7 @@ total_loan_amount = monthly_loans_in_december.sum()
 ### Avoid comments
 
 Comments can become problematic in a few ways:
+
 - If some code needs comments, it's a smell for deeper issues (e.g. bad variable naming, violation of single responsibility principle, poor abstraction)
 - Comments can grow stale and they can lie
 - Comments can make code even harder to understand when there's too much of it.
@@ -86,14 +92,13 @@ if employee.isEligibleForBenefits():
 
 ### Remove dead code
 
-Dead code is code which is executed but whose result is never used in any other computation. Dead code is yet another unrelated thing that developers have to hold in our head when coding. It adds unnecessary cognitive load. 
+Dead code is code which is executed but whose result is never used in any other computation. Dead code is yet another unrelated thing that developers have to hold in our head when coding. It adds unnecessary cognitive load.
 
 If there's code which does not change the result of the program whether it runs or not, then it's not required for the code to run. We should remove it to keep the codebase clean. When we make small and frequent commits, we need not fear losing code. If we ever need those lines of code again, we can easily recover it from the git history.
 
 One common type of dead code are print statements (even glorified print statements such as `df.head()`, `df.describe()`, `df.plot()`). While these offer useful feedback when we're writing code, too much of it makes code hard to read. The team has to visually parse the notebook and spend mental effort to filter out inconsequential print statements in order to find the code that actually has an effect on the output.
 
 When our codebase has unit tests, the feedback from unit tests replaces the manual/visual feedback we used to use (e.g. df.head()) to check if things are working. This allows us to remove these print statements and make our code more readable.
-
 
 **Bad:**
 
@@ -160,10 +165,10 @@ print(gaussian_accuracy)
 def train_model(ModelClass, X_train, Y_train, **kwargs):
     model = ModelClass(**kwargs)
     model.fit(X_train, Y_train)
-    
+
     accuracy_score = round(model.score(X_train, Y_train) * 100, 2)
     print(f'accuracy ({ModelClass.__name__}): {accuracy_score}')
-    
+
     return model, accuracy_score
 
 decision_tree_model, decision_tree_accuracy = train_model(DecisionTreeClassifier, X_train, Y_train)
@@ -176,6 +181,7 @@ gaussian_model     , gaussian_accuracy      = train_model(GaussianNB, X_train, Y
 ---
 
 ### Functions should do one thing
+
 This is by far the most important rule in software engineering. When functions do more than one thing, they are harder to compose, test, and reason about. When you can isolate a function to just one action, they can be refactored easily and your code will read much cleaner. If you take nothing else away from this guide other than this, you'll be ahead of many developers.
 
 **[⬆ back to top](#table-of-contents)**

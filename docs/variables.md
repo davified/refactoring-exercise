@@ -1,9 +1,10 @@
-## **Variables**
+# **Variables**
 
-### Variable names should reveal intent
-We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles. 
+## Variable names should reveal intent
 
-One common culprit in data science code is dataframes. Every dataframe is named as `df`. In software programming, it's an unusual (and bad) practice to embed information about variable types in the variable name (e.g. we would probably never write `string = 'Hello friends'`. Instead, we would write `greeting = 'Hello friends'`). 
+We will read more code than we will ever write. It's important for our code to express intent so that our readers don't have to waste mental effort to figure out puzzles.
+
+One common culprit in data science code is dataframes. Every dataframe is named as `df`. In software programming, it's an unusual (and bad) practice to embed information about variable types in the variable name (e.g. we would probably never write `string = 'Hello friends'`. Instead, we would write `greeting = 'Hello friends'`).
 
 **Bad:**
 
@@ -31,7 +32,7 @@ total_loan_amount = monthly_loans_in_december.sum()
 
 ```
 
-### Use meaningful and pronounceable variable names
+## Use meaningful and pronounceable variable names
 
 **Bad:**
 
@@ -45,10 +46,11 @@ ymdstr = datetime.date.today().strftime("%y-%m-%d")
 current_date: str = datetime.date.today().strftime("%y-%m-%d")
 ```
 
-### Use the same vocabulary for the same type of variable
+## Use the same vocabulary for the same type of variable
 
 **Bad:**
 Here we use three different names for the same underlying entity:
+
 ```python
 get_user_info()
 get_client_data()
@@ -57,13 +59,14 @@ get_customer_record()
 
 **Good**:
 If the entity is the same, you should be consistent in referring to it in your functions:
+
 ```python
 get_user_info()
 get_user_data()
 get_user_record()
 ```
 
-### Avoid magic numbers and magic numbers
+## Avoid magic numbers and magic numbers
 
 **Bad:**
 
@@ -81,7 +84,8 @@ SECONDS_IN_A_DAY = 86400
 time.sleep(SECONDS_IN_A_DAY)
 ```
 
-### Use variables to keep code "DRY"  ("Don't Repeat Yourself")
+## Use variables to keep code "DRY" ("Don't Repeat Yourself")
+
 DRY stands for "Don't Repeat Yourself". If you find yourself changing the same thing in multiple places, then that thing which you're changing is a candidate for refactoring.
 
 **Bad:**
@@ -102,7 +106,8 @@ loans = loans.fillna({target_column: 0})
 loans.groupby([target_column]).mean().sort_values(by=target_column)
 ```
 
-### Use explanatory variables
+## Use explanatory variables
+
 **Bad:**
 
 ```python
@@ -129,6 +134,7 @@ save_city_zip_code(city, zip_code)
 **Good**:
 
 Decrease dependence on regex by naming subpatterns.
+
 ```python
 address = 'One Infinite Loop, Cupertino 95014'
 city_zip_code_regex = r'^[^,\\]+[,\\\s]+(?P<city>.+?)\s*(?P<zip_code>\d{5})?$'
@@ -137,7 +143,8 @@ matches = re.match(city_zip_code_regex, address)
 save_city_zip_code(matches['city'], matches['zip_code'])
 ```
 
-### Avoid mental mapping
+## Avoid mental mapping
+
 Don’t force the reader of your code to translate what the variable means.
 Explicit is better than implicit.
 
@@ -166,8 +173,7 @@ for location in locations:
     dispatch(location)
 ```
 
-
-### Don't add unneeded context
+## Don't add unneeded context
 
 If your class/object name tells you something, don't repeat that in your variable name.
 
