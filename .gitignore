@@ -7,9 +7,7 @@ bin/miniconda3.sh
 models/*.joblib
 !models/keep
 **/.ipynb_checkpoints
-
-# ignoring all json files in project root folder to prevent accidental commits of secrets 
-/*.json
+.noseids
 
 # IDE config
 .vscode/
@@ -17,9 +15,6 @@ models/*.joblib
 
 # linters
 .mypy_cache
-
-# personal notes
-docs/todos.md
 
 # OSX
 .DS_Store
