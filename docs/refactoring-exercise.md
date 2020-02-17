@@ -19,11 +19,13 @@ Please ensure you have the following:
 You're ready to roll! Here are some common commands that you can run in your dev workflow.
 
 ```shell
+# initialize conda shell 
+conda init <SHELL_NAME> # SHELL_NAME options: bash, zsh, fish, powershell
+
+# close and open your shell/terminal
+
 # activate virtual environment
 source activate clean-code-ml
-
-# deactivate virtual environment
-conda deactivate
 
 # run unit tests
 nosetests
@@ -31,9 +33,13 @@ nosetests
 # run unit tests in watch mode and color output
 nosetests --with-watch --rednose --nologcapture
 
-# start jupyter notebook server
+# open a new terminal and start jupyter notebook server
 jupyter notebook
 # Now you can visit localhost:8888 on your browser.
+
+# at the end of the session, deactivate virtual environment
+conda deactivate
+
 ```
 
 ## IDE configuration
