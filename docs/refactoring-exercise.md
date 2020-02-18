@@ -1,46 +1,26 @@
-# clean-code-ml refactoring exercise
+# clean-code-ml refactoring exercise setup
 
-## Pre-workshop setup
+## Prerequisites
 
 Please ensure you have the following:
 
 - a [GitHub](https://github.com/) account
 - a [CircleCI](https://circleci.com) account
 - an IDE ([VS Code](https://code.visualstudio.com/Download) or [PyCharm](https://www.jetbrains.com/pycharm/download/))
-- Windows users:
-  - Download [Git Bash](https://gitforwindows.org/)
+- [Windows Users only] Install [git bash](https://gitforwindows.org/). We will be using `git bash` as the terminal for the workshop.
 
 ## Getting started
 
 1. Fork repo
 1. Clone repository: `git clone https://github.com/YOUR_USERNAME/clean-code-ml`
-1. Run `bin/setup.sh`. This will install miniconda3 if it's not already installed, and install project-level dependencies specified in `./environment.yml`
+1. Project setup. You can either use docker or conda. Choose whichever you prefer:
 
-You're ready to roll! Here are some common commands that you can run in your dev workflow.
+- docker ([workshop setup instructions](./setup-docker.md))
+- conda ([workshop setup instructions](./setup-conda.md))
+  - Mac/Linux users
+  - Windows users
 
-```shell
-# initialize conda shell 
-conda init <SHELL_NAME> # SHELL_NAME options: bash, zsh, fish, powershell
-
-# close and open your shell/terminal
-
-# activate virtual environment
-source activate clean-code-ml
-
-# run unit tests
-nosetests
-
-# run unit tests in watch mode and color output
-nosetests --with-watch --rednose --nologcapture
-
-# open a new terminal and start jupyter notebook server
-jupyter notebook
-# Now you can visit localhost:8888 on your browser.
-
-# at the end of the session, deactivate virtual environment
-conda deactivate
-
-```
+If you encounter any errors, please refer to [FAQs](./FAQs.md) for a list of common errors and how to fix them.
 
 ## IDE configuration
 

@@ -4,10 +4,10 @@ set -e
 
 virtual_env_name="$(basename $(pwd))"
 
-if [[ $OSTYPE != "darwin"* ]]; then
+if [[ $OSTYPE == "msys" ]]; then
   echo "[INFO] Non-Mac OSX operating system detected"
-  echo "[TODO] Open http://continuum.io/downloads with your web browser"
-  echo "[TODO] Download the Python 3 installer for your OS"
+  echo "[TODO] Open https://docs.conda.io/en/latest/miniconda.html with your web browser"
+  echo "[TODO] Download the Miniconda 3 installer for your OS"
   echo "[TODO] Run the installer. Go with the defaults, except make sure to check 'Make Anaconda the default Python'"
   echo "[INFO] Exiting..."
   exit 0
@@ -48,4 +48,4 @@ fi
 echo "[INFO] Done!"
 echo "[INFO] To activate the virtual environment, run: source activate ${virtual_env_name}"
 echo "[INFO] If you see a 'command not found: conda' error message, restart your shell/terminal"
-echo "[INFO] To deactivate the virtual environment, run: source deactivate"
+echo "[INFO] To deactivate the virtual environment, run: conda deactivate"

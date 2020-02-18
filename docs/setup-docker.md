@@ -1,0 +1,69 @@
+# Workshop Setup (Using Docker)
+
+## Prerequisites
+
+1. Install Docker
+
+- [for Mac](https://docs.docker.com/docker-for-mac/install/)
+- [for Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- [for Windows](https://docs.docker.com/docker-for-windows/install/)
+- **Important things to note**:
+  - You will be prompted to create a DockerHub account. Follow the instructions in order to download Docker
+  - Follow the installation prompts (go with the default options) **until you have successfully started Docker**
+  - [Windows users] When prompted to enable Hyper-V and Containers features, click 'Ok' and let computer restart again.
+  - You may have to restart your computer 2-3 times.
+
+2. Start Docker on your desktop (Note: Wait for Docker to complete startup before running the subsequent commands. You'll know when startup is completed when the docker icon in your taskbar stops animating)
+
+## Setup (Mac / Linux)
+
+```shell
+# build docker image
+docker build . -t clean-code-ml
+
+# start bash shell in a docker container
+docker run -it -v $(pwd):/code -p 8888:8888 clean-code-ml bash
+```
+
+## Setup (Windows)
+
+```shell
+# build docker image
+MSYS_NO_PATHCONV=1 docker build . -t clean-code-ml
+
+# start bash shell in a docker container
+winpty docker run -it -v C:\\Users\\path\\to\\your\\clean-code-ml:/code -p 8888:8888 clean-code-ml bash
+# Note: to find the path, you can run `pwd` in git bash, and manually replace forward slashes (/) with double backslashes (\\)
+```
+
+## Let's roll
+
+Now that your docker container is up and running, you're ready to run the commands that we'll use in this workshop
+
+```shell
+# run unit tests
+nosetests
+
+# run unit tests in watch mode and color output
+nosetests --with-watch --rednose --nologcapture
+
+# open a new terminal and start jupyter notebook server
+jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+
+# To stop a process in the docker container, hit Ctrl + C
+```
+
+Now you're ready to roll!
+
+## Other useful docker commands
+
+To run 2 commands/processes in the same container (e.g. run jupyter notebook and nosetests at the same time), you can start a second process in a running container by doing the following:
+
+```shell
+# See list of running containers
+docker ps
+
+# Start a bash shell in a running container when it’s running
+docker exec -it <container-id> bash
+# Now you can run your second command (e.g. start jupyter notebook)
+```
