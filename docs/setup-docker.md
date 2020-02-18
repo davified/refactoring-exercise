@@ -2,6 +2,7 @@
 
 ## Prerequisites
 
+1. [For Windows users] Docker Desktop requires Windows 10 Pro or Enterprise version 15063 to run. If your laptop is neither of these, please use [conda](./setup-conda.md) instead of Docker.
 1. Install Docker
 
 - [for Mac](https://docs.docker.com/docker-for-mac/install/)
