@@ -88,3 +88,5 @@ which conda
 source ~/.bash_profile
 
 ```
+
+3. **Important**: If you get the same `conda: command not found` error again in any new shell (e.g. in VS Code), simply run `source ~/.bash_profile` again
