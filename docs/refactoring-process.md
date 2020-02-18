@@ -10,6 +10,8 @@ Nonetheless, since this is the predicament which we find ourselves in, we need t
 
 ### The refactoring process
 
+<img src="../images/refactoring_cycle.png" width=1000 alt="refactoring cycle. how to refactor a jupyter notebook">
+
 **Before we start refactoring:**
 
 - Ensure that notebooks when run from start to end
