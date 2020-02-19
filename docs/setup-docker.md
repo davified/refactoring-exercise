@@ -19,6 +19,8 @@
 ## Setup (Mac / Linux)
 
 ```shell
+# ensure you are in clean-code-ml directory
+
 # build docker image
 docker build . -t clean-code-ml
 
@@ -29,6 +31,8 @@ docker run -it -v $(pwd):/code -p 8888:8888 clean-code-ml bash
 ## Setup (Windows)
 
 ```shell
+# ensure you are in clean-code-ml directory
+
 # build docker image
 MSYS_NO_PATHCONV=1 docker build . -t clean-code-ml
 
