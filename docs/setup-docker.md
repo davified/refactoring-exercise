@@ -72,3 +72,13 @@ docker ps
 docker exec -it <container-id> bash
 # Now you can run your second command (e.g. start jupyter notebook)
 ```
+
+## Configure your IDE for better intellisense
+
+1. install dependencies locally (i.e. outside of Docker image): `bin/install_deps_locally.sh`
+
+2. Select Python interpreter. In VS Code:
+
+- Open command palette: Press `F1`
+- Type: "Python: Select Interpreter"
+- Choose or type: `./.venv/bin/python`
