@@ -1,7 +1,8 @@
 import unittest
 import pandas as pd
+import numpy as np
 from pandas.testing import assert_frame_equal
-from src.workshop import add, multiply_by_10
+from src.workshop import add, multiply_by_10, impute_nans
 
 class TestWorkshop(unittest.TestCase):
     def test_add_1_and_1_should_return_2(self):
@@ -34,3 +35,21 @@ class TestWorkshop(unittest.TestCase):
         actual_df = multiply_by_10(df)
         
         assert_frame_equal(expected_df, actual_df)
+        
+    def test_impute_nans_should_replace_nan_values_with_the_median_value(self):
+        # arrange
+        input_df = pd.DataFrame({
+            'column_1': [1, np.nan],
+            'column_2': [0, np.nan],
+            'column_3': ['hello', 'something'],
+        })
+        expected_df = pd.DataFrame({
+            'column_1': [1, 1],
+            'column_2': [0, np.nan],
+            'column_3': ['hello', 'something'],
+        })
+        # act
+        actual_df = impute_nans(input_df, columns=['column_1'])
+        
+        # assert
+        assert_frame_equal(expected_df, actual_df, check_dtype=False)
