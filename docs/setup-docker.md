@@ -82,3 +82,11 @@ docker exec -it <container-id> bash
 - Open command palette: Press `F1`
 - Type: "Python: Select Interpreter"
 - Choose or type: `./.venv/bin/python`
+
+## Bonus: running test coverage
+
+We've installed a python library ([`coverage`](https://coverage.readthedocs.io/en/coverage-5.0.3/)) that tells you which lines of code are tested/not tested. To do use, run:
+
+- `coverage run -m nose`
+- `coverage html`
+- Open `clean-code-ml/htmlcov/index.html` in your browser

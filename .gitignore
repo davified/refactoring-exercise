@@ -9,6 +9,10 @@ models/*.joblib
 **/.ipynb_checkpoints
 .noseids
 
+# test coverage
+htmlcov
+.coverage
+
 # IDE config
 .vscode/
 .idea/

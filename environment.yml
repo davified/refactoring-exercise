@@ -16,3 +16,4 @@ dependencies:
     - rope==0.16.0
     - PyYAML==5.3
     - argh==0.26.2
+    - coverage==5.0.3
