@@ -16,10 +16,3 @@ def multiply_by_10(df):
             df[col] = df[col] * 10
     
     return df
-
-def impute_nans(df, columns):
-    for col in columns:
-        if df.dtypes[col] != 'object':
-            df[col] = df[col].fillna(df[col].dropna().median())
-        
-    return df
