@@ -33,6 +33,8 @@ Further reading: https://www.thoughtworks.com/insights/blog/reproducible-work-en
 
 The only keyboard shortcut you absolutely must remember from is `Ctrl+Shift+P` (Windows/Linux) or `⇧⌘P` (MacOS). This brings up Command Palette, where you can search for any actions. It does fuzzy searching so writing `emet` will find *E*xtract *MET*hod. It will also show you the associated keyboard shortcut, so you can gradually learn more shortcuts.
 
+<img src="../images/command_palette.png" width=500 alt="VSCode command palette">
+
 ## Ensure reproducibility
 
 (Work in progress)
