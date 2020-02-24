@@ -2,6 +2,12 @@
 
 ## Avoid exposing your internals (Keep implementation details hidden)
 
+```txt
+"The purpose of abstraction is not to be vague, but to create a new semantic level in which one can be absolutely precise."
+
+- Edsger Dijkstra
+```
+
 Functions and classes simplify our code by abstracting away complicated implementation details and replacing them with a simpler representation - its name. When implementation details are all laid bare in a Jupyter notebook without any abstractions (functions), we are forced to understand the **how**'s in order to find out **what**'s happening.
 
 Imagine you’re in a restaurant and you’re given a menu. Instead of telling you the name of the dishes, this menu spells out the recipe for each dish. For example, one such dish is:
