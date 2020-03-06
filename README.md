@@ -52,10 +52,10 @@ Inspired by [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-
 By James O Coplien (Source: Foreword of Clean Code (Robert C. Martin))
 
 In about 1951, a quality approach called Total Productive Maintenance (TPM) came on the Japanese scene. Its focus is on maintenance rather than on production. One of the major pillars of TPM is the set of so-called 5S principles:
-- **Seiri**, or organization (think **sort** in English). Knowing where things are—using approaches such as suitable naming—is crucial. You think naming identifiers isn’t important? Read on in the following chapters.
+- **Seiri**, or organization (think **sort** in English). Knowing where things are—using approaches such as suitable naming—is crucial.
 - **Seiton**, or tidiness (think **systematize** in English). There is an old American saying: A place for everything, and everything in its place. A piece of code should be where you expect to find it—and, if not, you should re-factor to get it there.
 - **Seiso**, or cleaning (think **shine** in English): Keep the workplace free of hanging wires, grease, scraps, and waste. What do the authors here say about littering your code with comments and commented-out code lines that capture history or wishes for the future? Get rid of them.
-- **Seiketsu**, or **standardization**: The group agrees about how to keep the workplace clean. Do you think this book says anything about having a consistent coding style and set of practices within the group? Where do those standards come from? Read on.
+- **Seiketsu**, or **standardization**: The group agrees about how to keep the workplace clean. Have a consistent coding style and set of practices within the group.
 - **Shutsuke**, or discipline (**self-discipline**). This means having the discipline to follow the practices and to frequently reflect on one’s work and be willing to change.
 
 ## Hands-on Exercise
