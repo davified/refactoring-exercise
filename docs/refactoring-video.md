@@ -3,12 +3,12 @@
 My refactoring process (use them in the order that works for you)
 
 ## Prerequisites
-- [] Local dev environment is set up
-- [] Run notebook and ensure it works
-- [] Make a copy of the notebook (to eliminate any emotional attachment)
-- [] Remove print statements
-- [] Convert notebook as Python file
-- [] Read notebook and list code smells
+- [x] Local dev environment is set up
+- [x] Run notebook and ensure it works
+- [x] Make a copy of the notebook (to eliminate any emotional attachment)
+- [x] Remove print statements
+- [x] Convert notebook as Python file
+- [x] Read notebook and list code smells
 
 ## Refactoring steps
 - [] Run tests in watch mode
