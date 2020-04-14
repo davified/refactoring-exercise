@@ -1,5 +1,7 @@
 # clean-code-ml
 
+Now available as a video series: https://bit.ly/3a4k9x3 😎
+
 ## Table of Contents
 
 - [Introduction](#introduction)
