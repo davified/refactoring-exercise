@@ -1,6 +1,6 @@
 # clean-code-ml
 
-Now available as a free tutorial series: https://bit.ly/3a4k9x3 😎
+Now available as a free tutorial series: https://bit.ly/2yGDyqT 😎
 
 ## Table of Contents
 
