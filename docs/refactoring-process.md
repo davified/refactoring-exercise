@@ -15,31 +15,36 @@ Nonetheless, since this is the predicament which we find ourselves in, we need t
 **Before we start refactoring:**
 
 - Ensure that notebooks when run from start to end
-  - Even better if you can add an "integration" or "functional" test of the code (see last step - "Add a functional test for the ML model")
 - Make a copy of the original notebook (for comparing the end result later)
   - This frees us up from any emotional attachment and allow us to ruthlessly clean up the code.
+- Convert Jupyter notebook into a plain Python file
+  - This will allow you to have all the benefits of using an IDE (e.g. autocomplete, intellisense, formatting, auto-renaming, linting, keyboard shortcuts, etc. For more details, check out this [tutorial](https://www.youtube.com/watch?v=KUvqDINDzFE&list=PLO9pkowc_99ZhP2yuPU8WCfFNYEx2IkwR&index=6))
+  - Command: `jupyter nbconvert --to script mynotebook.ipynb`
 - Remove print statements (e.g. `print(...)`, `df.head()`, `df.describe()`, `df.plot()`)
   - This removes noise and visual clutter, and makes the next step exponentially easier
 - Read notebook and list [code smells](../README.md)
+- Define refactoring boundary and add a characterisation test
+  - This is arguably **the most important step**. Having a characterisation test will give you fast feedback because it can be run continuously as you refactor. It will tell you within seconds (or even milliseconds) if you've accidentally introduced an error or a bug.
+  - Without the characterisation test, you would have to manually restart and rerun the entire Jupyter notebook - which is cumbersome and so 2019.
 
 **The refactoring cycle:**
 The instructions for how to run each step can be found in the [refactoring exercise](./refactoring-exercise.md)
 
-1. Identify a block of code that can be extracted into a pure function
-1. Pseudo-TDD (test-driven development)
+- Identify a block of code that can be extracted into a pure function
+- Write automated tests
 
    - Run the unit tests in [watch mode](./refactoring-exercise.md#getting-started)
    - Write a [unit test](../src/tests/test_preprocessing.py) for the code block
    - Create a [Python module](../src/preprocessing.py) and define a function. Move existing implementation from notebook into that function
    - Make the test pass
 
-1. In the notebook, replace original code block with the newly defined function
-1. Restart and run entire notebook (Unfortunately, until we have sufficient unit tests, we will still need manual “integration” tests for the time being.)
-1. [If possible] Refactor function some more
-1. Commit your changes
-   - git add .
-   - git commit -m "your commit message"
-1. **Rinse and repeat**
+- In the notebook, replace original code block with the newly defined function
+- Ensure characterisation tests are still passing
+- [If possible] Refactor function some more
+- Commit your changes
+   - `git add .`
+   - `git commit -m "your commit message"`
+- **Rinse and repeat**
 
 ### Some tips
 
@@ -50,3 +55,5 @@ The instructions for how to run each step can be found in the [refactoring exerc
 - Don't try big bang refactorings. Refactoring isn’t an activity that’s separated from programming. We refactor as we go.
 - When to refactor
   - "**Three strikes, then you refactor.** The first time you do something, you just do it. The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway. The third time you do something similar, you refactor." (Martin Fowler)
+
+

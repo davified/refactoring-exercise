@@ -7,8 +7,9 @@ My refactoring process (use them in the order that works for you)
 - [x] Run notebook and ensure it works
 - [x] Make a copy of the notebook (to eliminate any emotional attachment)
 - [x] Remove print statements
-- [x] Convert notebook as Python file
 - [x] Read notebook and list code smells
+- [x] Convert notebook as Python file
+- [x] Determine boundary of refactoring and add characterisation test there
 
 ## Refactoring steps
 - [] Run tests in watch mode
@@ -23,3 +24,4 @@ My refactoring process (use them in the order that works for you)
     - [] Commit your changes
 - [] Add functional test for ML model
 - [] Celebrate 🤘🤘
+
