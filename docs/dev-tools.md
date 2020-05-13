@@ -2,6 +2,8 @@
 
 ## Use Docker and stop hearing "Works on my machine!"
 
+TL;DR: [Get started with Docker in 17 minutes](https://www.youtube.com/watch?v=Vun1DL9zGuM&list=PLO9pkowc_99ZhP2yuPU8WCfFNYEx2IkwR&index=2)
+
 Actual story:
 
 - Me: wow, cool repo! so impress, much fancy.
@@ -26,8 +28,6 @@ Docker allows us to manage the following dependencies in a single place:
 - Project-level dependencies (e.g. `pandas`, `numpy`)
 
 Sample template project: https://github.com/davified/docker-python-template
-
-Further reading: https://www.thoughtworks.com/insights/blog/reproducible-work-environments-using-docker
 
 ## VS Code productivity tips (or "Know Your IDE")
 
