@@ -31,9 +31,11 @@ Further reading: https://www.thoughtworks.com/insights/blog/reproducible-work-en
 
 ## VS Code productivity tips (or "Know Your IDE")
 
-The only keyboard shortcut you absolutely must remember from is `Ctrl+Shift+P` (Windows/Linux) or `⇧⌘P` (MacOS). This brings up Command Palette, where you can search for any actions. It does fuzzy searching so writing `emet` will find *E*xtract *MET*hod. It will also show you the associated keyboard shortcut, so you can gradually learn more shortcuts.
+- [Configuring IntelliSense and autocomplete in VS Code](https://www.youtube.com/watch?v=KUvqDINDzFE&list=PLO9pkowc_99ZhP2yuPU8WCfFNYEx2IkwR&index=6)
+- [How to set up auto-formatting](https://www.youtube.com/watch?v=uO7Zfa_65t8&list=PLO9pkowc_99ZhP2yuPU8WCfFNYEx2IkwR&index=7)
+- [How to reduce errors and code smells with a linter](https://www.youtube.com/watch?v=CVUryn8szcw&list=PLO9pkowc_99ZhP2yuPU8WCfFNYEx2IkwR&index=8)
 
-<img src="../images/command_palette.png" width=500 alt="VSCode command palette">
+(Work in progress - Tutorial in written form)
 
 ## Ensure reproducibility
 
