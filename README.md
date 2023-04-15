@@ -22,8 +22,6 @@ https://gist.github.com/jcartledge/0ce114e9719a62a4776569e80088511d
 
 ## Tasks that you can run
 
-TODO - clean up the commands for this exercise
-
 ```shell script
 # start docker runtime
 colima start
