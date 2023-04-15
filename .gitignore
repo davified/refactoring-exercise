@@ -1,21 +1,26 @@
-.venv*/
+# editor config
+.idea/*
+.vscode
 
-# miniconda installer
-bin/miniconda3.sh
+# python virtual environment (used by IDE)
+.venv
+venv
 
-**/__pycache__
-models/*.joblib
-!models/keep
-**/.ipynb_checkpoints
-.noseids
+# python cache
+__pycache__
+**/*.pyc
 
-# test coverage
-htmlcov
-.coverage
+# pytest
+.pytest_cache
 
-# IDE config
-.vscode/
-.idea/
+# jupyter
+.ipynb_checkpoints/
+
+# training artifacts
+artifacts/
+
+# batect
+.batect/caches/key
 
 # linters
 .mypy_cache

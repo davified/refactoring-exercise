@@ -1,0 +1,56 @@
+containers:
+  dev:
+    build_directory: .
+    volumes:
+      - local: .
+        container: /code
+      - type: cache
+        name: python-dev-dependencies
+        container: /opt/.venv  # this path has to be same as VENV_PATH below
+    build_args:
+      VENV_PATH: /opt/.venv
+    build_target: dev
+
+tasks:
+  setup:
+    description: Install Python dependencies
+    run:
+      container: dev
+      command: ./scripts/setup.sh
+
+  start-dev-container:
+    description: Start containerised development environment
+    run:
+      container: dev
+      command: bash
+
+  smoke-test-model-training:
+    description: Run smoke tests for model training
+    run:
+      container: dev
+      command: scripts/tests/smoke-test-model-training.sh
+    prerequisites:
+      - setup
+
+  model-metrics-test:
+    description: Run model metrics tests
+    run:
+      container: dev
+      command: scripts/tests/model-metrics-test.sh
+
+  train-model:
+    description: Train ML model
+    run:
+      container: dev
+      command: scripts/train-model.sh
+    prerequisites:
+      - setup
+
+  start-jupyter:
+    description: Start Jupyter Notebook server
+    run:
+      container: dev
+      command: scripts/start-jupyter.sh
+      ports:
+        - local: 8888
+          container: 8888
