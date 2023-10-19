@@ -3,13 +3,13 @@ name = "refactoring-exercise"
 version = "0.1.0"
 description = "A hands-on exercise for refactoring jupyter notebooks"
 authors = ["David Tan <davidtan@thoughtworks.com>"]
-# packages = [{include = "training", from = "src"}]  # TODO
 
 [tool.poetry.dependencies]
 python = "^3.9"
 numpy = "^1.24.2"
 pandas = "1.5.1"
 scikit-learn = "^1.2.2"
+pytest-cov = "^4.0.0"
 
 [tool.poetry.dev-dependencies]
 black = "23.1.0"

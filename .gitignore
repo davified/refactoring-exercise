@@ -13,14 +13,14 @@ __pycache__
 # pytest
 .pytest_cache
 
+# coverage
+.coverage
+
 # jupyter
 .ipynb_checkpoints/
 
 # training artifacts
 artifacts/
-
-# batect
-.batect/caches/key
 
 # linters
 .mypy_cache
